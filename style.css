@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #181a2f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  gap: 16px;
+}
+
+.grid {
+  display: grid;
+}
+
+.cell {
+  background: #2b2a38;
+  border: 1px solid #181a2f;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cell:hover {
+  background: #181a2f;
+  transition-duration: 50ms;
+}
+
+.visited {
+  background: black;
+}
+
+.path {
+  background: yellow;
+}
+
+.obstacle {
+  background-color: #181a2f;
+}
+
+.output {
+  display: flex;
+  font-size: large;
+  color: white;
+}
+
+.out {
+  width: 150px;
+}
+
+.btn {
+  margin: 0 4px;
+  padding: 4px 12px;
+  width: 100px;
+  color: white;
+  font-size: large;
+  background: transparent;
+  border: 2px solid #00aeef;
+  border-radius: 6px;
+  transition-timing-function: ease-in-out;
+  transition-duration: 100ms;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #00aeef;
+}

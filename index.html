@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pathfinding Algorithm</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="grid" class="grid"></div>
+    <div class="output">
+      <div class="out">Visited: <span id="visited">0</span></div>
+      <div class="out">Shortest: <span id="shortest">Infinity</span></div>
+    </div>
+    <div class="control-obstacle">
+      <button id="add" class="btn">Add</button>
+      <button id="remove" class="btn">Remove</button>
+    </div>
+    <div class="controller">
+      <button id="dijkstra" class="btn">Dijkstra</button>
+      <button id="astar" class="btn">A Star</button>
+      <button id="stop" class="btn">Stop</button>
+      <button id="clear" class="btn">Clear</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
