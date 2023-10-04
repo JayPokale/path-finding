@@ -164,13 +164,13 @@ async function astar() {
   const visited = Array(rows)
     .fill()
     .map(() => Array(cols).fill(0));
-  visited[0][0] = rows + cols - 2;
   cells[0][0].classList.add("visited");
 
   const stack = [];
   const pq = new PriorityQueue((a, b) => a.elem[5] - b.elem[5]);
   pq.enqueue([0, 0, null, null, 0, rows + cols]);
 
+  var bool = false;
   while (!pq.isEmpty()) {
     if (isStop) break;
 
@@ -183,10 +183,10 @@ async function astar() {
     }
 
     for (const [i, j] of [
-      [x + 0, y + 1],
-      [x + 1, y + 0],
-      [x + 0, y - 1],
-      [x - 1, y + 0],
+      [x + bool, y + !bool],
+      [x + !bool, y + bool],
+      [x - bool, y - !bool],
+      [x - !bool, y - bool],
     ]) {
       if (i === prevX && j === prevY) continue;
       if (i >= 0 && j >= 0 && i < rows && j < cols && !grid[i][j]) {
@@ -198,6 +198,7 @@ async function astar() {
         }
       }
     }
+    bool = !bool;
     stack.push([x, y, prevX, prevY]);
     await new Promise((resolve) => {
       setTimeout(() => {
